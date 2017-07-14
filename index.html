@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  	<meta name="author" content="j_mal" />
+  	<title>jQuery plugin for rating</title>
+    
+  	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+
+    <!-- Plugin CSS -->
+  <link rel="stylesheet" href="dist/css/jquery.mn-file.min.css">
+
+  <link rel="stylesheet" href="assets/css/demo.css">
+    
+  </head>
+  <body class="mnFile">
+    <div class="container demo">
+
+      <h1 class="text-center" >MN-File Upload jQuery Plugin</h1>
+
+      <div class="alert alert-info text-center">
+          <strong>Thank you for purchasing MN-File Upload jQuery Plugin</strong><br />
+          If you have any questions that you can't find in the documentation, you can contact me via my profile page <a href="https://codecanyon.net/user/mahmoudnb">here</a>
+      </div>
+
+      <p>
+        Author : mahmoudnb<br />
+        Last update : 02-06-2017<br />
+        Last version : <span class="label label-primary">1.1</span>
+      </p>
+
+      <div class="page-header">
+        <h3 class="text-primary">About MN-File Upload</h3>
+      </div>
+
+      <p>
+        MN-File Upload is a jquery plugin that allows you to customize your HTML file inputs by using HTML and CSS classes. The plugin also allows you to preview the loaded images and fire your custom code before or after file loaded.
+      </p>
+
+      <div class="page-header">
+        <h3 class="text-primary">Main features</h3>
+      </div>
+
+      <ol>
+        <li>Fast and Lightweight (~1K)</li>
+        <li>Easy to use and integrate into any Website</li>
+        <li>Easy to personalize style by applying a consistent style to your theme</li>
+        <li>preview of uploaded images</li>
+        <li>Many options to customize by your needs</li>
+      </ol>
+
+      <div class="page-header">
+        <h3 class="text-primary">Files</h3>
+      </div>
+
+      MN-File Upload use only one third party JS lib.<br />
+      To see docs, just click on link.
+      <ul>
+        <li><a href="https://api.jquery.com/" target="_blank">jQuery Library</a></li>
+      </ul>
+
+      <h5>Supported jQuery versions </h5>
+      <ul>
+        <li>jQuery >= 1.9</li>
+        <li>jQuery = 2.x</li>
+        <li>jQuery = 3.x</li>
+      </ul>
+
+
+      <div class="page-header">
+        <h3 class="text-primary">Installation and use</h3>
+      </div>
+
+      <h4>Include necessary JS and CSS files</h4>
+
+      <p>The only dependency required is jQuery.</p>
+
+      <pre class="prettyprint"><code>&lt;script src='JS_DIR/jquery-1.9.min.js' >&lt;/script></code></pre>
+
+      <br /> 
+      <p>add included js and css files to your project</p>
+
+      <pre class="prettyprint"><code>&lt;script src="JS_DIR/jquery.mn-file.js" >&lt;/script></code></pre>
+
+      <pre class="prettyprint"><code>&lt;link rel="stylesheet" href="CSS_DIR/jquery.mn-file.css" ></code></pre>
+
+      <br />
+
+      <h4>HTML</h4>
+
+      <p>Replace your input FileUpload</p>
+    
+      <pre class="prettyprint"><code>&lt;input <strong>type="file"</strong> name="inputName"  /></code></pre>
+
+      <p>by the flowing HTML code</p>
+
+      <pre class="prettyprint"><code>&lt;div <strong>class="customFile"</strong> data-controlMsg="Choose a file">
+  &lt;span class="selectedFile">No file selected&lt;/span>
+  &lt;input <strong>type="file"</strong> name="inputName"  />
+&lt;/div></code></pre>
+
+
+      <br />
+      <p>call the plugin with your custom options</p>
+
+      <pre class="prettyprint">
+<code>&lt;script&gt;
+  $(function() {
+    $(<strong>"[type=file]"</strong>).mnFileInput({
+      display: "left",
+      noFileSelectedMsg: "No file selected",
+      afterChange: function(){
+        <em>// your code</em>
+      }
+    }});
+  });
+&lt;/script&gt;</code></pre>
+
+
+      <div class="page-header">
+        <h3 class="text-primary">Options</h3>
+      </div>
+
+
+
+
+      <blockquote>
+        <h4>display</h4><br />
+        <em>Default Value : </em><code>left</code>
+        <p>Define the display mode of input FileUpload
+          <br /><code>'left'</code> : upload button is on the left side
+          <br /><code>'right'</code> : upload button is on the right side
+          <br /><code>'button'</code> : Show button only
+        </p>
+      </blockquote>
+
+      <blockquote>
+        <h4>controlMsg</h4><br />
+        <em>Default Value : </em><code>'Choose a file'</code>
+        <p>Define the value of upload button</p>
+      </blockquote>
+
+      <blockquote>
+        <h4>noFileSelectedMsg</h4><br />
+        <em>Default Value : </em><code>'No file selected'</code>
+        <p>To display the name of the loaded file or if no file is selected</p>
+      </blockquote>
+
+      <blockquote>
+        <h4>beforeChange <code>'function'</code></h4>
+        <p>Function called before file uploaded</p>
+      </blockquote>
+
+      <blockquote>
+        <h4>afterChange <code>'function'</code></h4>
+        <p>Function called after file uploaded</p>
+      </blockquote>
+
+      <blockquote>
+        <h4>afterPreview <code>'function'</code></h4>
+        <p>function called after preview image loaded</p>
+      </blockquote>
+
+      
+
+      <div class="page-header">
+        <h3 class="text-primary">Examples</h3>
+      </div>
+
+      <div class="example">
+        <h4>Default configuration</h4>
+        <pre class="prettyprint">
+        <code>&lt;div class="<strong>customFile</strong>">
+          &lt;span class="selectedFile"><strong>No file selected</strong>&lt;/span>
+          &lt;input type="file" name="inputName"  />
+        &lt;/div>
+
+        &lt;script&gt;
+        // Javascript
+        $(function() {
+          /* This is basic - uses default settings */
+          $(<strong>"[type=file]"</strong>).mnFileInput();
+        });&lt;/script&gt;</code></pre>
+
+        <br />
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+            <div class="customFile" >
+              <span class="selectedFile">No file selected</span>
+              <input type="file" name="file1"  class="file" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="example">
+        <h4>Set messages</h4>
+        <p>There are two ways to define default messages and labels (using HTML or JS options)</p>
+
+        <div class="row">
+          <div class="col-md-6">
+<pre class="prettyprint">
+  <code>&lt;div class="customFile" <strong>data-controlMsg="Browse"</strong>>
+    &lt;span class="selectedFile"><strong>jpg, png and gif</strong>&lt;/span>
+    &lt;input type="file" name="inputName"  />
+  &lt;/div>
+
+
+
+
+  &lt;script&gt;
+  // Javascript
+  $(function() {
+    $(<strong>"[type=file]"</strong>).mnFileInput();
+  });&lt;/script&gt;</code></pre>
+          </div>
+          <div class="col-md-6">
+<pre class="prettyprint">
+  <code>&lt;div class="customFile" >
+    &lt;span class="selectedFile"><strong></strong>&lt;/span>
+    &lt;input type="file" name="inputName"  />
+  &lt;/div>
+
+  &lt;script&gt;
+  // Javascript
+  $(function() {
+    $(<strong>"[type=file]"</strong>).mnFileInput({
+      <strong>controlMsg : "Browse",</strong>
+      <strong>noFileSelectedMsg : "jpg, png and gif"</strong>
+    });
+  });&lt;/script&gt;</code></pre>
+          </div>
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+            <div class="customFile" data-controlMsg="Browse" >
+              <span class="selectedFile">jpg, png and gif</span>
+              <input type="file" name="file1"  class="file" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+
+      <div class="example">
+        <h4>set display mode</h4>
+        <p>You can change the display mode by setting the HTML <code>data-display="right"</code> attribute, as you can also with the JS options <code>display: "right"</code></p>
+        <pre class="prettyprint">
+        <code>&lt;div class="customFile" <strong>data-display="right"</strong> data-controlMsg="Choose a file">
+          &lt;span class="selectedFile">No file selected&lt;/span>
+          &lt;input type="file" name="inputName"  />
+        &lt;/div>
+
+        &lt;script&gt;
+        // Javascript
+        $(function() {
+          $(<strong>"[type=file]"</strong>).mnFileInput();
+        });&lt;/script&gt;</code></pre>
+
+        <br />
+        <h5>data-display="right"</h5>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+            <div class="customFile" data-display="right" data-controlMsg="Choose a file" >
+              <span class="selectedFile">No file selected</span>
+              <input type="file" name="file1"  class="file" />
+            </div>
+
+          </div>
+        </div>
+
+        <br /><br />
+        <h5>data-display="button"</h5>
+
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+
+
+            <div class="customFile rightBtn" data-display="button" data-controlMsg="Choose a file">
+              <span class="selectedFile">No file selected</span>
+              <input type="file" name="file2"  class="widthCallback" />
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <br /><br />
+
+      <div class="example">
+        <h4>width preview</h4>
+        <p>You just need to set the selector of an image to use for the preview</p>
+        <pre class="prettyprint">
+        <code>&lt;div class="customFile" data-controlMsg="Choose a file">
+          &lt;span class="selectedFile"><strong>No file selected</strong>&lt;/span>
+          &lt;input type="file" name="inputName" class="<strong>widthPreview</strong>" />
+        &lt;/div>
+        ...
+        &lt;div class="previewContainer">
+          &lt;img class="<strong>preview</strong>" src="" alt="Image preview..." />
+        &lt;/div>
+
+        &lt;script&gt;
+        // Javascript
+        $(function() {
+          /* This is basic - uses default settings */
+          $(<strong>".widthPreview"</strong>).mnFileInput({
+            <strong>'preview': '.preview'</strong>
+          });
+        });&lt;/script&gt;</code></pre>
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+            <div class="customFile" >
+              <span class="selectedFile">No file selected</span>
+              <input type="file" name="fileName" class="widthPreview" />
+            </div>
+            <br />
+            <div class="previewContainer">
+              <img class="preview" src="" alt="Image preview..." />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+
+
+      <div class="example">
+        <h4>Callbacks</h4>
+        <pre class="prettyprint">
+        <code>&lt;div class="customFile" data-controlMsg="Choose a file">
+          &lt;span class="selectedFile"><strong>No file selected</strong>&lt;/span>
+          &lt;input type="file" name="inputName" class="<strong>widthCallback</strong>" />
+        &lt;/div>
+
+        &lt;div class="previewContainer">
+          &lt;img class="<strong>preview2</strong>" src="" alt="Image preview..." />
+        &lt;/div>
+
+        &lt;script&gt;
+        // Javascript
+        $(function() {
+          /* This is basic - uses default settings */
+          $(<strong>".widthCallback"</strong>).mnFileInput({
+            'preview': '.preview2',
+            <strong>'beforeChange' : function(e){</strong>
+              alert('beforeChange');
+              $('.preview2').hide();
+            <strong>},</strong>
+            <strong>'afterChange' : function(e){</strong>
+              alert('afterChange:' + e.target.value);
+            <strong>},</strong>
+            <strong>afterPreview: function(e){</strong>
+              console.log('afterPreview');
+              $('.preview2').fadeIn(3000);
+            <strong>}</strong>
+          });
+        });&lt;/script&gt;</code></pre>
+
+        <br />
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+            <div class="customFile rightBtn" data-display="left" data-controlMsg="Choose a file">
+              <span class="selectedFile">No file selected</span>
+              <input type="file" name="file2"  class="widthCallback" />
+            </div>
+            <br />
+            <div class="previewContainer">
+            <img class="preview2" src="" alt="Image preview..." style="display:none;" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <br /><br />
+
+
+      <div class="page-header">
+        <h3 class="text-primary">Customization</h3>
+      </div>
+
+      <p>
+        You can add your own CSS to customize the colors, fonts, and sizes of your file fields
+      </p>
+
+
+
+
+
+      <div class="page-header">
+        <h3 class="text-primary">Credits</h3>
+      </div>
+
+      <ul>
+          <li>jQuery <a href="https://jquery.com/">https://jquery.com/</a></li>
+          <li>JavaScript code prettifier <a href="https://github.com/google/code-prettify">https://github.com/google/code-prettify</a></li>
+          <li>Bootstrap <a href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
+      </ul>
+
+      
+
+      <div class="page-header">
+        <h3 class="text-primary">Change Log</h3>
+      </div>
+
+      v1.1 (02-06-2017)
+      <ul>
+        <li>Improve documentation</li>
+        <li>Comment the source code</li>
+        <li>Remove unnecessary code</li>
+      </ul>
+
+      v1.0 (29-05-2017)
+      <ul>
+        <li>Initial release</li>
+      </ul>
+
+    </div>
+
+
+
+
+    <!-- jQuery -->
+  <script src='vendor/jquery/jquery-1.12.4.min.js'></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/code-prettify/js/run_prettify.js"></script>
+  
+  <!-- Plugin JS -->
+  <script src="dist/js/jquery.mn-file.js"></script>
+  <script src="assets/js/demo.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "mn-file-upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "jquery",
+    "html",
+    "css",
+    "file-upload"
+  ],
+  "author": "mahmoud-nb",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-minifier": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+	"gulp-jshint": "^2.0.4",
+	"jshint": "^2.9.4"
+  }
+}

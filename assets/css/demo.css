@@ -1,0 +1,18 @@
+/*
+ * Author : Mahmoud Nbet
+ * Email : mahmoud.nb@gmail.com
+**/
+
+@charset "utf-8";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.demo{ font-family: monospace, verdana;}
+.demo h2{margin:0 0 2px; font-size:23px; line-height:20px;  padding: 4px; border-radius: 4px; }
+.demo h3{font-size:16px; margin:0 0 6px;}
+.demo pre{background: #EDEDED; padding: 6px;border-radius: 3px;line-height: 17px;    margin: 0 0 6px;}
+pre strong{background:#f5d384; padding:0 2px;}
+
+.demo .previewContainer{text-align: center; height: 160px;}
+.demo .previewContainer img {border: 5px solid #FFF; box-shadow: 0 0 3px -1px rgba(0, 0, 0, 0.8); max-height: 160px;}
+
+.demo ul{ padding: 5px; }
+.demo ul li{margin-bottom: 6px;}
