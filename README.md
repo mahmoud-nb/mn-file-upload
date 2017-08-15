@@ -42,5 +42,8 @@ MN-File jQuery File Upload Plugin
 	<li>afterPreview : callback function to fire after preview image loaded</li>
 </ul>
 
+<h3>Demo</h3>
+<a href="https://mahmoud-nb.github.io/mn-file-upload/" target="_blak">click here to see demo and more details</a>
+
 <br />
 <p>Includes complete documentation with samples</p>
