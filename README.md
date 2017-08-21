@@ -1,4 +1,4 @@
-MN-File jQuery File Upload Plugin
+MN-File jQuery File Upload Plugin (<a href="https://mahmoud-nb.github.io/mn-file-upload/" target="_blak"><em>demo</em></a>)
 
 <h3>About</h3>
 <p>MN-File Upload is a jquery plugin that allows you to customize your HTML file inputs by using HTML and CSS classes. The plugin also allows you to preview the loaded images and fire your custom code before or after file loaded.</p>
@@ -45,5 +45,3 @@ MN-File jQuery File Upload Plugin
 <h3>Demo</h3>
 <a href="https://mahmoud-nb.github.io/mn-file-upload/" target="_blak">click here to see demo and more details</a>
 
-<br />
-<p>Includes complete documentation with samples</p>
